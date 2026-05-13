@@ -1,0 +1,102 @@
+.container {
+    min-height: 100vh;
+    background: #EEF3F2;
+    padding-top: 15vh;
+}
+
+.content {
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem;
+}
+
+.row {
+    margin-bottom: 1.5rem;
+}
+
+.row h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1d4f5e;
+}
+
+.form {
+    width: 100%;
+}
+
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    border-left: 4px solid #2F6D80;
+}
+
+.cardHeader {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eef0f1;
+}
+
+.cardHeader h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1d4f5e;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.field { display: flex; flex-direction: column; gap: 5px; }
+.full  { grid-column: 1 / -1; }
+
+.req { color: #E24B4A; }
+
+.radioGroup { display: flex; gap: 8px; }
+
+.radioBtn {
+    flex: 1;
+    height: 42px;
+    border: 1.5px solid #D0DFE2;
+    border-radius: 8px;
+    background: white;
+    color: #5a7a83;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.radioBtnSelected {
+    border-color: #2F6D80;
+    background: #EEF6F8;
+    color: #2F6D80;
+    font-weight: 600;
+}
+
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+}
+
+.btnNext {
+    background: #2F6D80;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0 1.5rem;
+    height: 42px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btnNext:hover { background: #1d4f5e; }
+
+@media (max-width: 600px) {
+    .grid { grid-template-columns: 1fr; }
+    .stepper { gap: 4px; }
+    .stepLabel { display: none; }
+}

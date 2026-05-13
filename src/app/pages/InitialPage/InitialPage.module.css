@@ -3,10 +3,9 @@
     flex-direction: column;
     min-height: 100vh;
     background: #EEF3F2;
-    padding-top: 15vh; /* mesma altura do seu header */
+    padding-top: 15vh; 
 }
 
-/* ── Carrossel ── */
 .carouselWrap {
     position: relative;
     width: 100%;
@@ -32,7 +31,6 @@
     object-position: center top;
 }
 
-/* Gradiente escuro no bottom da foto */
 .slideOverlay {
     position: absolute;
     inset: 0;
@@ -44,7 +42,6 @@
     z-index: 1;
 }
 
-/* Texto sobre a foto */
 .slideLabel {
     position: absolute;
     bottom: 2.5rem;
@@ -67,7 +64,6 @@
     font-weight: 300;
 }
 
-/* Botões ‹ › */
 .carouselBtn {
     position: absolute;
     top: 50%;
@@ -96,7 +92,6 @@
 .prev { left: 1.2rem; }
 .next { right: 1.2rem; }
 
-/* Bolinhas */
 .dots {
     position: absolute;
     bottom: 1rem;
@@ -123,7 +118,6 @@
     transform: scale(1.35);
 }
 
-/* Barra de progresso */
 .progressBar {
     position: absolute;
     bottom: 0;
@@ -140,7 +134,6 @@
     transition: width 0.1s linear;
 }
 
-/* ── Seção de conteúdo ── */
 .main {
     display: flex;
     flex-direction: column;
