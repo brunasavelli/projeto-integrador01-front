@@ -1,6 +1,6 @@
 import "./globals.css";
-// import Header from "../components/Header/page.jsx";
-// import Footer from "./../components/Footer/page.jsx";
+import Header from "../components/Header/page.jsx";
+import Footer from "./../components/Footer/page.jsx";
 
 export const metadata = {
     title: "Sistema de Controle Hospitalar",
@@ -14,9 +14,9 @@ export default function RootLayout({ children }) {
     return (
         <html lang="pt-BR">
             <body>
-                {/* <Header /> */}
+                <Header />
                 <main>{children}</main>
-                {/* <Footer /> */}
+                <Footer />
             </body>
         </html>
     );
