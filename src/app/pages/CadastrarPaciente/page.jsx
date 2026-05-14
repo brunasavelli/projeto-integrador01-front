@@ -11,7 +11,7 @@ export default function CadastrarPaciente() {
     const [sexo, setSexo] = useState("");
     const [form, setForm] = useState({
         nome: "", cpf: "", rg: "", nascimento: "",
-        telefone: "", email: "", estadoCivil: "", naturalidade: ""
+        telefone: "", email: "", sexo: ""
     });
 
     const handleChange = (e) => {

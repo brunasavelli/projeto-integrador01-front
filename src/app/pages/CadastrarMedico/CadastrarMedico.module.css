@@ -30,6 +30,17 @@
     border-left: 4px solid #2F6D80;
 }
 
+.card input {
+    height: 42px;
+    border: 1.5px solid #D0DFE2;
+    border-radius: 8px;
+    background: white;
+    color: #5a7a83;
+    font-size: 13px;
+    padding: 0 1rem;
+    transition: all 0.2s;
+}
+
 .cardHeader {
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;

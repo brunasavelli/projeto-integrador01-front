@@ -1,0 +1,135 @@
+.container {
+    min-height: 100vh;
+    padding-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding:  17vh 1rem;
+    background: #EEF3F2;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.row .select {
+    background: white;
+    border-radius: 20px;
+    font-size: 16px;
+    padding: 0.5rem 2rem;
+    font-weight: 600;
+    color: #1d4f5e;
+    border: 2px solid #1d4f5e;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.row .select:hover {
+    background: #1d4f5e;
+    color: white;
+}
+
+.row .select.active {
+    background: #1d4f5e;
+    color: white;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+    width: 90%;
+    margin-top: 2rem;
+}
+
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.cardRow {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chamadoId {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1d4f5e;
+    margin: 0;
+}
+
+.priority {
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background: #ff3939;
+    padding: 0.25rem 1rem;
+    border-radius: 15px;
+    margin: 0;
+}
+
+.patienteName {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1d4f5e;
+    margin: 0.5rem 0 0 0;
+}
+
+.description strong {
+    font-weight: 600;
+    color: #676767;
+}
+
+.description p {
+    font-size: 14px;
+    color: #676767;
+    margin: 0.5rem 0;
+}
+
+.line {
+    width: 100%;
+    height: 1.5px;
+    background: #eef0f1;
+    margin: 1rem 0;
+}
+
+.status {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+}
+
+.btnDetalhes {
+    background: #1d4f5e;
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btnDetalhes:hover {
+    background: #16404a;
+    box-shadow: 0 2px 8px rgba(29, 79, 94, 0.3);
+}

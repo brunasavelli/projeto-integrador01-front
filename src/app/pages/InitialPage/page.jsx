@@ -55,7 +55,7 @@ export default function InitialPage() {
 
     useEffect(() => {
         if (paused) return
-        const timer = setInterval(next, 4000)
+        const timer = setInterval(next, 3000)
         return () => clearInterval(timer)
     }, [paused, next])
 

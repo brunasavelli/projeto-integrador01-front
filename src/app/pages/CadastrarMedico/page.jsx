@@ -1,7 +1,6 @@
 "use client";
 
 import styles from "./CadastrarMedico.module.css";
-import Header from "@/components/Header/page.jsx";
 import { useState } from "react";
 
 const steps = ["Dados pessoais", "Endereço", "Dados clínicos", "Confirmar"];
@@ -10,28 +9,12 @@ export default function CadastrarMedico() {
     const [stepAtual, setStepAtual] = useState(0);
     const [sexo, setSexo] = useState("");
     const [form, setForm] = useState({
-        nome: "", cpf: "", rg: "", nascimento: "",
-        telefone: "", email: "", estadoCivil: "", naturalidade: ""
+        nome: "", especialidade: "", crm: ""
     });
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         let v = value;
-
-        if (name === "cpf") {
-            v = value.replace(/\D/g, "")
-            if (v.length <= 3) v = v
-            else if (v.length <= 6) v = v.slice(0,3)+"."+v.slice(3)
-            else if (v.length <= 9) v = v.slice(0,3)+"."+v.slice(3,6)+"."+v.slice(6)
-            else v = v.slice(0,3)+"."+v.slice(3,6)+"."+v.slice(6,9)+"-"+v.slice(9,11)
-        }
-
-        if (name === "telefone") {
-            v = value.replace(/\D/g, "")
-            if (v.length <= 2) v = "("+v
-            else if (v.length <= 7) v = "("+v.slice(0,2)+") "+v.slice(2)
-            else v = "("+v.slice(0,2)+") "+v.slice(2,7)+"-"+v.slice(7,11)
-        }
 
         setForm(prev => ({ ...prev, [name]: v }));
     };
@@ -56,9 +39,14 @@ export default function CadastrarMedico() {
                                 <input name="nome" value={form.nome} onChange={handleChange} placeholder="Ex: Dr. Fábio Silva" />
                             </div>
 
-                            <div className={styles.field}>
-                                <label>Escpecialidade: <span className={styles.req}>*</span></label>
-                                <input name="cpf" value={form.cpf} onChange={handleChange} placeholder="000.000.000-00" maxLength={14} />
+                            <div className={`${styles.field} ${styles.full}`}>
+                                <label>Especialidade: <span className={styles.req}>*</span></label>
+                                <input name="especialidade" value={form.especialidade} onChange={handleChange} placeholder="Ex: Cardiologista" />
+                            </div>
+
+                            <div className={`${styles.field} ${styles.full}`}>
+                                <label>CRM: <span className={styles.req}>*</span></label>
+                                <input name="crm" value={form.crm} onChange={handleChange} placeholder="Ex: 123456/SP" />
                             </div>
                         </div>
 
