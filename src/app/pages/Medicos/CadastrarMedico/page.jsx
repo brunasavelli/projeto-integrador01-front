@@ -9,7 +9,7 @@ export default function CadastrarMedico() {
     const [stepAtual, setStepAtual] = useState(0);
     const [sexo, setSexo] = useState("");
     const [form, setForm] = useState({
-        nome: "", especialidade: "", crm: ""
+        nome: "", especialidade: ""
     });
 
     const handleChange = (e) => {
@@ -42,11 +42,6 @@ export default function CadastrarMedico() {
                             <div className={`${styles.field} ${styles.full}`}>
                                 <label>Especialidade: <span className={styles.req}>*</span></label>
                                 <input name="especialidade" value={form.especialidade} onChange={handleChange} placeholder="Ex: Cardiologista" />
-                            </div>
-
-                            <div className={`${styles.field} ${styles.full}`}>
-                                <label>CRM: <span className={styles.req}>*</span></label>
-                                <input name="crm" value={form.crm} onChange={handleChange} placeholder="Ex: 123456/SP" />
                             </div>
                         </div>
 

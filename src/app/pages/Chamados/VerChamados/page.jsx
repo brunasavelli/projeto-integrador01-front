@@ -129,6 +129,13 @@ export default function Chamados() {
                     >
                         Finalizados
                     </button>
+                    <Link href="/pages/Chamados/IniciarChamado">
+                        <button
+                            className={styles.select}
+                        >
+                            Iniciar Chamado
+                        </button>
+                    </Link>
                 </div>
                 <div className={styles.main}>
                     {chamadosFiltrados.map((chamado) => (

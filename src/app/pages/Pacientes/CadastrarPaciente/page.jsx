@@ -1,17 +1,12 @@
 "use client";
 
 import styles from "./CadastrarPaciente.module.css";
-import Header from "@/components/Header/page.jsx";
 import { useState } from "react";
 
-const steps = ["Dados pessoais", "Endereço", "Dados clínicos", "Confirmar"];
-
 export default function CadastrarPaciente() {
-    const [stepAtual, setStepAtual] = useState(0);
-    const [sexo, setSexo] = useState("");
     const [form, setForm] = useState({
-        nome: "", cpf: "", rg: "", nascimento: "",
-        telefone: "", email: "", sexo: ""
+        nome: "", cpf: "", nascimento: "",
+        telefone: "", email: ""
     });
 
     const handleChange = (e) => {
@@ -35,6 +30,62 @@ export default function CadastrarPaciente() {
 
         setForm(prev => ({ ...prev, [name]: v }));
     };
+
+    async function cadastrarPaciente() {
+        try {
+            if (
+                !form.nome ||
+                !form.nascimento ||
+                !form.telefone ||
+                !form.email
+            ) {
+                alert("Preencha todos os campos obrigatórios");
+                return;
+            }
+
+            const paciente = {
+                nome: form.nome,
+                data_nascimento: form.nascimento,
+                telefone: form.telefone,
+                email: form.email
+            };
+
+            console.log("ENVIANDO:", paciente);
+
+            const resposta = await fetch(
+                "http://127.0.0.1:8000/pacientes",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(paciente)
+                }
+            );
+
+            const dados = await resposta.json();
+
+            console.log("RESPOSTA:", dados);
+
+            if (!resposta.ok) {
+                alert("Erro ao cadastrar paciente");
+                return;
+            }
+
+            alert("Paciente cadastrado com sucesso!");
+
+            setForm({
+                nome: "",
+                cpf: "",
+                nascimento: "",
+                telefone: "",
+                email: "",
+            });
+        } catch (erro) {
+            console.error("ERRO:", erro);
+            alert("Erro ao cadastrar paciente");
+        }
+    }
 
     return (
         <div className={styles.container}>
@@ -62,11 +113,6 @@ export default function CadastrarPaciente() {
                             </div>
 
                             <div className={styles.field}>
-                                <label>RG: </label>
-                                <input name="rg" value={form.rg} onChange={handleChange} placeholder="00.000.000-0" />
-                            </div>
-
-                            <div className={styles.field}>
                                 <label>Data de nascimento: <span className={styles.req}>*</span></label>
                                 <input name="nascimento" type="date" value={form.nascimento} onChange={handleChange} />
                             </div>
@@ -80,24 +126,10 @@ export default function CadastrarPaciente() {
                                 <label>E-mail: </label>
                                 <input name="email" type="email" value={form.email} onChange={handleChange} placeholder="exemplo@email.com" />
                             </div>
-
-                            <div className={`${styles.field} ${styles.full}`}>
-                                <label>Sexo: <span className={styles.req}>*</span></label>
-                                <div className={styles.radioGroup}>
-                                    {["Masculino", "Feminino", "Outro"].map(op => (
-                                        <button
-                                            key={op}
-                                            type="button"
-                                            onClick={() => setSexo(op)}
-                                            className={`${styles.radioBtn} ${sexo === op ? styles.radioBtnSelected : ""}`}
-                                        >{op}</button>
-                                    ))}
-                                </div>
-                            </div>
                         </div>
 
                         <div className={styles.footer}>
-                            <button className={styles.btnNext} onClick={() => setStepAtual(s => Math.min(s + 1, steps.length - 1))}>
+                            <button className={styles.btnNext} onClick={cadastrarPaciente}>
                                 Cadastrar
                             </button>
                         </div>

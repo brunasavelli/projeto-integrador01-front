@@ -68,17 +68,17 @@ export default function Header() {
                         </Link>
                     </li>
                     <li className={styles.navItem}>
-                        <Link href="/pages/CadastrarPaciente" className={`${styles.navLink} ${isActive('/pages/CadastrarPaciente') ? styles.active : ''}`} onClick={closeMenu}>
-                            Cadastrar Paciente
+                        <Link href="/pages/Pacientes/VerPacientes" className={`${styles.navLink} ${isActive('/pages/Pacientes/VerPacientes') ? styles.active : ''}`} onClick={closeMenu}>
+                            Pacientes
                         </Link>
                     </li>
                     <li className={styles.navItem}>
-                        <Link href="/pages/CadastrarMedico" className={`${styles.navLink} ${isActive('/pages/CadastrarMedico') ? styles.active : ''}`} onClick={closeMenu}>
-                            Cadastrar Médicos
+                        <Link href="/pages/Medicos/VerMedicos" className={`${styles.navLink} ${isActive('/pages/CadastrarMedico') ? styles.active : ''}`} onClick={closeMenu}>
+                            Médicos
                         </Link>
                     </li>
                     <li className={styles.navItem}>
-                        <Link href="/pages/Chamados" className={`${styles.navLink} ${isActive('/pages/Chamados') ? styles.active : ''}`} onClick={closeMenu}>
+                        <Link href="/pages/Chamados/VerChamados" className={`${styles.navLink} ${isActive('/pages/Chamados') ? styles.active : ''}`} onClick={closeMenu}>
                             Ver Chamados
                         </Link>
                     </li>

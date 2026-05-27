@@ -157,10 +157,10 @@
 }
 
 .text p {
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.8;
     color: #3d5c65;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 @media (max-width: 768px) {

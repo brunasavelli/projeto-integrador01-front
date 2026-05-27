@@ -132,8 +132,18 @@ export default function InitialPage() {
                 <div className={styles.text}>
                     <h3>Sobre o projeto</h3>
                     <p>
-                        Texto falando sobre o projeto Texto falando sobre o projeto Texto falando sobre o projeto
-                        Texto falando sobre o projeto Texto falando sobre o projeto Texto falando sobre o projeto
+                        O Sistema de Controle Hospitalar (SCH) é um projeto desenvolvido para auxiliar no gerenciamento de atendimentos 
+                        médicos em hospitais e clínicas, centralizando informações de pacientes, médicos e chamados em um único sistema. 
+                        O objetivo principal é tornar o processo de atendimento mais organizado, eficiente e seguro, reduzindo problemas 
+                        causados por controles manuais ou sistemas desorganizados. <br/>
+                        O sistema permite o cadastro de pacientes e médicos, o registro de chamados médicos com classificação automática 
+                        de prioridade baseada na urgência e gravidade do caso, além do acompanhamento do status dos atendimentos. Também 
+                        oferece consultas e estatísticas básicas, possibilitando uma melhor visualização das demandas hospitalares e do 
+                        fluxo de atendimentos.<br/>
+                        Desenvolvido em Python com banco de dados MySQL, o SCH utiliza tanto uma interface via terminal (CLI) quanto uma 
+                        interface gráfica, priorizando organização do código, validação de dados, integridade das informações e tratamento 
+                        de erros. O projeto aplica conceitos fundamentais de desenvolvimento de sistemas, banco de dados e programação 
+                        modular, sendo uma solução prática para o controle hospitalar.
                     </p>
                 </div>
             </div>

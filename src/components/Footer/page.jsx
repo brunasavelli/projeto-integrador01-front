@@ -13,7 +13,7 @@ export default function Footer() {
                 </div>
                 <div className={styles.card}>
                     <p>Felipe Veríssimo Oliveira</p>
-                    <p><b>RA: </b>00000000</p>
+                    <p><b>RA: </b>26002350</p>
                 </div>
                 <div className={styles.card}>
                     <p>Rafaela Lorena da Luz Antunes</p>
